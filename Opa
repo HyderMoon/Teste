@@ -1,303 +1,120 @@
--- Gui to Lua
--- Version: 3.2
-
 -- Instances:
-
-local ScreenGui = Instance.new("ScreenGui")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local FramePlayer = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local Fly = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-Fly.MouseButton1Down:connect(function()
-	local fly = Instance.new("ScreenGui")
-	local epic = Instance.new("Frame")
-	local backgroundtitle = Instance.new("TextLabel")
-	local creator = Instance.new("TextLabel")
-	local title = Instance.new("TextLabel")
-	local close = Instance.new("TextButton")
-	local flybutton = Instance.new("TextButton")
-
-	--Properties:
-
-	fly.Name = "fly"
-	fly.Parent = game.CoreGui
-	fly.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-	epic.Name = "epic"
-	epic.Parent = fly
-	epic.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	epic.Position = UDim2.new(0.0911376476, 0, 0.466830462, 0)
-	epic.Size = UDim2.new(0, 181, 0, 178)
-	epic.Active = true
-	epic.Draggable = true
-
-	backgroundtitle.Name = "backgroundtitle"
-	backgroundtitle.Parent = epic
-	backgroundtitle.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
-	backgroundtitle.Size = UDim2.new(0, 182, 0, 43)
-	backgroundtitle.Font = Enum.Font.SciFi
-	backgroundtitle.Text = ""
-	backgroundtitle.TextColor3 = Color3.fromRGB(0, 0, 0)
-	backgroundtitle.TextScaled = true
-	backgroundtitle.TextSize = 14.000
-	backgroundtitle.TextWrapped = true
-
-	creator.Name = "creator"
-	creator.Parent = epic
-	creator.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
-	creator.Position = UDim2.new(0.00442049652, 0, 0.762519121, 0)
-	creator.Size = UDim2.new(0, 181, 0, 42)
-	creator.Font = Enum.Font.SourceSans
-	creator.Text = "Made by Arowix"
-	creator.TextColor3 = Color3.fromRGB(0, 0, 0)
-	creator.TextScaled = true
-	creator.TextSize = 14.000
-	creator.TextWrapped = true
-
-	title.Name = "title"
-	title.Parent = epic
-	title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	title.BackgroundTransparency = 1.000
-	title.Position = UDim2.new(0.0497237556, 0, 0, 0)
-	title.Size = UDim2.new(0, 119, 0, 43)
-	title.Font = Enum.Font.SciFi
-	title.Text = "Fly"
-	title.TextColor3 = Color3.fromRGB(0, 0, 0)
-	title.TextScaled = true
-	title.TextSize = 14.000
-	title.TextWrapped = true
-
-	close.Name = "close"
-	close.Parent = epic
-	close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	close.Position = UDim2.new(0.76795578, 0, 0, 0)
-	close.Size = UDim2.new(0, 43, 0, 43)
-	close.Font = Enum.Font.GothamBlack
-	close.Text = "X"
-	close.TextColor3 = Color3.fromRGB(0, 0, 0)
-	close.TextScaled = true
-	close.TextSize = 14.000
-	close.TextWrapped = true
-	close.MouseButton1Down:connect(function()
-		epic.Visible = false
-	end)
-
-	flybutton.Name = "flybutton"
-	flybutton.Parent = epic
-	flybutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	flybutton.Position = UDim2.new(0.243093923, 0, 0.344781578, 0)
-	flybutton.Size = UDim2.new(0, 84, 0, 42)
-	flybutton.Font = Enum.Font.SourceSans
-	flybutton.Text = "Click me to Fly"
-	flybutton.TextColor3 = Color3.fromRGB(0, 0, 0)
-	flybutton.TextSize = 14.000
-	flybutton.MouseButton1Down:connect(function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/7rXZ9VNc", true))()
-		flybutton.Text = "Press E to fly and unfly"
-		flybutton.TextSize = 10.000
-	end)
-end)
-local NoClip = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local Player = Instance.new("TextLabel")
-local InfJump = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local WaterWalk = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local LavaWalk = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local MoonScript = Instance.new("TextLabel")
-local UICorner_7 = Instance.new("UICorner")
-local FrameTeleport = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
-local Teleport = Instance.new("TextLabel")
-local TeleportLocations = Instance.new("TextButton")
-local UICorner_9 = Instance.new("UICorner")
-
+local WaterWalkerv10 = Instance.new("ScreenGui")
+local mainFrame = Instance.new("Frame")
+local statusLabel = Instance.new("TextLabel")
+local toggleButton = Instance.new("TextButton")
 --Properties:
+WaterWalkerv10.Name = "WaterWalker v1.0"
+WaterWalkerv10.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+WaterWalkerv10.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+mainFrame.Name = "mainFrame"
+mainFrame.Parent = WaterWalkerv10
+mainFrame.AnchorPoint = Vector2.new(0, 1)
+mainFrame.BackgroundColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+mainFrame.BorderColor3 = Color3.new(1, 0.666667, 0)
+mainFrame.BorderSizePixel = 4
+mainFrame.Position = UDim2.new(0, 0, 1, 0)
+mainFrame.Size = UDim2.new(0.200000003, 0, 0.100000001, 0)
+mainFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
 
-ScrollingFrame.Parent = ScreenGui
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
-ScrollingFrame.BorderColor3 = Color3.fromRGB(63, 63, 63)
-ScrollingFrame.BorderSizePixel = 3
-ScrollingFrame.Position = UDim2.new(0.239084616, 0, 0.154898569, 0)
-ScrollingFrame.Size = UDim2.new(0, 571, 0, 327)
+statusLabel.Name = "statusLabel"
+statusLabel.Parent = mainFrame
+statusLabel.AnchorPoint = Vector2.new(0.5, 0)
+statusLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+statusLabel.BackgroundTransparency = 1
+statusLabel.BorderColor3 = Color3.new(0, 0, 0)
+statusLabel.BorderSizePixel = 0
+statusLabel.Position = UDim2.new(0.5, 0, 0, 0)
+statusLabel.Size = UDim2.new(0.800000012, 0, 0.400000006, 0)
+statusLabel.Font = Enum.Font.SourceSansBold
+statusLabel.Text = "Status: Disabled"
+statusLabel.TextColor3 = Color3.new(1, 1, 1)
+statusLabel.TextScaled = true
+statusLabel.TextSize = 14
+statusLabel.TextWrapped = true
 
-FramePlayer.Name = "FramePlayer"
-FramePlayer.Parent = ScrollingFrame
-FramePlayer.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-FramePlayer.Position = UDim2.new(0.064798601, 0, 0.0640348494, 0)
-FramePlayer.Size = UDim2.new(0, 497, 0, 209)
-
-UICorner.CornerRadius = UDim.new(0, 10)
-UICorner.Parent = FramePlayer
-
-Fly.Name = "Fly"
-Fly.Parent = FramePlayer
-Fly.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-Fly.Position = UDim2.new(0.0230295341, 0, 0.196045801, 0)
-Fly.Size = UDim2.new(0, 475, 0, 23)
-Fly.Font = Enum.Font.GothamBlack
-Fly.Text = "  Fly (R)"
-Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
-Fly.TextSize = 14.000
-Fly.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_2.Parent = Fly
-
-NoClip.Name = "NoClip"
-NoClip.Parent = FramePlayer
-NoClip.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-NoClip.Position = UDim2.new(0.023, 0, 0.335000008, 0)
-NoClip.Size = UDim2.new(0, 475, 0, 23)
-NoClip.Font = Enum.Font.GothamBlack
-NoClip.Text = "  NoClip (E)"
-NoClip.TextColor3 = Color3.fromRGB(255, 255, 255)
-NoClip.TextSize = 14.000
-NoClip.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_3.Parent = NoClip
-
-Player.Name = "Player"
-Player.Parent = FramePlayer
-Player.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-Player.BorderColor3 = Color3.fromRGB(52, 52, 52)
-Player.Position = UDim2.new(0.0237982683, 0, 0.0471543521, 0)
-Player.Size = UDim2.new(0, 83, 0, 19)
-Player.Font = Enum.Font.GothamBlack
-Player.Text = "Player"
-Player.TextColor3 = Color3.fromRGB(255, 255, 255)
-Player.TextSize = 14.000
-Player.TextXAlignment = Enum.TextXAlignment.Left
-
-InfJump.Name = "InfJump"
-InfJump.Parent = FramePlayer
-InfJump.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-InfJump.Position = UDim2.new(0.023, 0, 0.474000007, 0)
-InfJump.Size = UDim2.new(0, 475, 0, 23)
-InfJump.Font = Enum.Font.GothamBlack
-InfJump.Text = "  InfJump"
-InfJump.TextColor3 = Color3.fromRGB(255, 255, 255)
-InfJump.TextSize = 14.000
-InfJump.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_4.Parent = InfJump
-
-WaterWalk.Name = "WaterWalk"
-WaterWalk.Parent = FramePlayer
-WaterWalk.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-WaterWalk.Position = UDim2.new(0.023, 0, 0.612999976, 0)
-WaterWalk.Size = UDim2.new(0, 475, 0, 23)
-WaterWalk.Font = Enum.Font.GothamBlack
-WaterWalk.Text = "  WaterWalk"
-WaterWalk.TextColor3 = Color3.fromRGB(255, 255, 255)
-WaterWalk.TextSize = 14.000
-WaterWalk.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_5.Parent = WaterWalk
-
-LavaWalk.Name = "LavaWalk"
-LavaWalk.Parent = FramePlayer
-LavaWalk.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-LavaWalk.Position = UDim2.new(0.023, 0, 0.753000021, 0)
-LavaWalk.Size = UDim2.new(0, 475, 0, 23)
-LavaWalk.Font = Enum.Font.GothamBlack
-LavaWalk.Text = "  LavaWalk"
-LavaWalk.TextColor3 = Color3.fromRGB(255, 255, 255)
-LavaWalk.TextSize = 14.000
-LavaWalk.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_6.Parent = LavaWalk
-
-MoonScript.Name = "MoonScript"
-MoonScript.Parent = ScrollingFrame
-MoonScript.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-MoonScript.Position = UDim2.new(0.0847264156, 0, 0.0104878545, 0)
-MoonScript.Size = UDim2.new(0, 476, 0, 41)
-MoonScript.Font = Enum.Font.GothamBlack
-MoonScript.Text = "🌑 MoonScript 🌑"
-MoonScript.TextColor3 = Color3.fromRGB(255, 255, 255)
-MoonScript.TextSize = 14.000
-
-UICorner_7.Parent = MoonScript
-
-FrameTeleport.Name = "FrameTeleport"
-FrameTeleport.Parent = ScrollingFrame
-FrameTeleport.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-FrameTeleport.Position = UDim2.new(0.064798601, 0, 0.273058802, 0)
-FrameTeleport.Size = UDim2.new(0, 497, 0, 209)
-
-UICorner_8.CornerRadius = UDim.new(0, 10)
-UICorner_8.Parent = FrameTeleport
-
-Teleport.Name = "Teleport"
-Teleport.Parent = FrameTeleport
-Teleport.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-Teleport.BorderColor3 = Color3.fromRGB(52, 52, 52)
-Teleport.Position = UDim2.new(0.0237982683, 0, 0.0471543521, 0)
-Teleport.Size = UDim2.new(0, 83, 0, 19)
-Teleport.Font = Enum.Font.GothamBlack
-Teleport.Text = "Teleport"
-Teleport.TextColor3 = Color3.fromRGB(255, 255, 255)
-Teleport.TextSize = 14.000
-Teleport.TextXAlignment = Enum.TextXAlignment.Left
-
-TeleportLocations.Name = "Teleport Locations"
-TeleportLocations.Parent = FrameTeleport
-TeleportLocations.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-TeleportLocations.Position = UDim2.new(0.023, 0, 0.195999995, 0)
-TeleportLocations.Size = UDim2.new(0, 475, 0, 23)
-TeleportLocations.Font = Enum.Font.GothamBlack
-TeleportLocations.Text = "  Locations"
-TeleportLocations.TextColor3 = Color3.fromRGB(255, 255, 255)
-TeleportLocations.TextSize = 14.000
-TeleportLocations.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_9.Parent = TeleportLocations
-
+toggleButton.Name = "toggleButton"
+toggleButton.Parent = mainFrame
+toggleButton.AnchorPoint = Vector2.new(0.5, 0)
+toggleButton.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+toggleButton.BorderColor3 = Color3.new(0, 1, 0)
+toggleButton.BorderSizePixel = 2
+toggleButton.Position = UDim2.new(0.5, 0, 0.449999988, 0)
+toggleButton.Size = UDim2.new(0.600000024, 0, 0.400000006, 0)
+toggleButton.Font = Enum.Font.SourceSansBold
+toggleButton.Text = "Enable"
+toggleButton.TextColor3 = Color3.new(1, 1, 1)
+toggleButton.TextScaled = true
+toggleButton.TextSize = 14
+toggleButton.TextWrapped = true
 -- Scripts:
+function SCRIPT_RTXW76_FAKESCRIPT() -- toggleButton.Function
+local script = Instance.new('LocalScript')
+script.Parent = toggleButton
+local Button = script.Parent
+local Debounce = false
 
-local function THFK_fake_script() -- ScrollingFrame.LocalScriptMoverJanela 
-	local script = Instance.new('LocalScript', ScrollingFrame)
+local Status = Button.Parent:WaitForChild("statusLabel")
 
-	local UIS = game:GetService('UserInputService')
-	local frame = script.Parent
-	local dragToggle = nil
-	local dragSpeed = 0.25
-	local dragStart = nil
-	local startPos = nil
-	
-	local function updateInput(input)
-		local delta = input.Position - dragStart
-		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-	end
-	
-	frame.InputBegan:Connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-			dragToggle = true
-			dragStart = input.Position
-			startPos = frame.Position
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragToggle = false
-				end
-			end)
-		end
-	end)
-	
-	UIS.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			if dragToggle then
-				updateInput(input)
-			end
-		end
-	end)
+local workSpace = game:GetService("Workspace")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local starterGui = game:GetService("StarterGui")
+
+Button.MouseButton1Click:Connect(function()
+if Debounce == false then
+--// GUI Settings \\--
+starterGui:SetCore("SendNotification", {
+Title = "WaterWalker v1.0";
+Text = "Water is solid.";
+})
+Status.Text = "Status: Enabled"
+Button.Text = "Disable"
+Button.BorderColor3 = Color3.new(255,0,0)
+--// Game Settings \\--
+replicatedStorage.Interaction.Ban:Destroy()
+Instance.new("RemoteEvent", replicatedStorage.Interaction).Name = "Ban"
+for i, v in pairs(workSpace.Water:GetChildren()) do
+if v:IsA("Part") then
+v.CanCollide = true
 end
-coroutine.wrap(THFK_fake_script)()
+end
+Debounce = true
+else
+--// GUI Settings \\--
+starterGui:SetCore("SendNotification", {
+Title = "WaterWalker v1.0";
+Text = "Water is liquid.";
+})
+Status.Text = "Status: Disabled"
+Button.Text = "Enable"
+Button.BorderColor3 = Color3.new(0,255,0)
+--// Game Settings \\--
+for i, v in pairs(workSpace.Water:GetChildren()) do
+if v:IsA("Part") then
+v.CanCollide = false
+end
+end
+Debounce = false
+end
+end)
+
+end
+coroutine.resume(coroutine.create(SCRIPT_RTXW76_FAKESCRIPT))
+function SCRIPT_FXTU83_FAKESCRIPT() -- WaterWalkerv10.Credits
+local script = Instance.new('LocalScript')
+script.Parent = WaterWalkerv10
+local starterGui = game:GetService("StarterGui")
+
+starterGui:SetCore("SendNotification", {
+Title = "WaterWalker v1.0";
+Text = "Loaded Successfully!";
+})
+wait(2)
+starterGui:SetCore("SendNotification", {
+Title = "WaterWalker v1.0";
+Text = "Created By ZyrusPowered#4185";
+})
+
+end
+coroutine.resume(coroutine.create(SCRIPT_FXTU83_FAKESCRIPT))
